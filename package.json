@@ -1,0 +1,30 @@
+{
+  "name": "WololoSI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CimimUxMaio/WololoSI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CimimUxMaio/WololoSI/issues"
+  },
+  "homepage": "https://github.com/CimimUxMaio/WololoSI#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.8",
+    "@types/socket.io": "^2.1.11",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
