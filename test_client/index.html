@@ -3,7 +3,8 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
             var socket = io();
-            socket.emit("joinGameRoom", "1234");
+            const gameId = "1234";
+            socket.emit("joinGameRoom", gameId);
 
             socket.on("message", (msg) => {
                 console.log(msg);
@@ -12,9 +13,15 @@
             socket.on("update", () => {
                 console.log("Game updated!");
             });
+
+            function buttonClick() {
+                console.log("Enviando notificacion...");
+                socket.emit("notifyGameUpdate", gameId);
+            }
         </script>
     </head>
     <body>
         <h1>Hello WololoSI!</h1>
+        <button onclick="buttonClick();">Update game</button>
     </body>
 </html>
