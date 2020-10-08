@@ -20,6 +20,6 @@ export function onJoinGameRoom(_io: SocketIO.Server, socket: Socket) {
 
 export function onNotifyGameUpdate(_io: SocketIO.Server, socket: Socket) {
     socket.on("notifyGameUpdate", (gameId: string) => {
-        socket.to(getGameRoom(gameId)).emit("update");
+        _io.sockets.in(getGameRoom(gameId)).emit("update");
     });
 }
