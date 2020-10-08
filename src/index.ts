@@ -1,7 +1,7 @@
-import server from "./server";
+import { server } from "./server";
 
 const serverPort: number = 8080;
 
-server().listen(serverPort, () => {
+server.listen(serverPort, () => {
     console.log("Server running...");
 });

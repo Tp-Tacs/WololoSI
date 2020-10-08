@@ -1,20 +1,17 @@
 import express from "express";
+import * as eventSetter from "./event_setters/eventsetters";
+import { router } from "./router";
 
-export default function createServer() {
+function init() {
     const app = express();
-    const server = require("http").Server(app);
-    const io = require("socket.io")(server);
+    const server = require("http").createServer(app);
+    const io = require("socket.io").listen(server);
 
-    io.on("connection", (socket: any) => {
-        console.log("Client connected via websocket!");
-        io.emit("greeting", "Buen dia :D, soy el socket " + socket.id);
-    });
+    eventSetter.onConnection(io);
 
-    //app.use("test_client");
+    app.use("/", router);
 
-    app.get("/", (_req, res) => {
-        res.send("Hola mundo!");
-    });
-
-    return app;
+    return server;
 }
+
+export let server = init();

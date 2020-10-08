@@ -1,14 +1,20 @@
 <html>
-  <head>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-      const socket = io();
-      socket.on("greeting", (data) => {
-        console.log(data);
-      });
-    </script>
-  </head>
-  <body>
-    <h1>Hello</h1>
-  </body>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            socket.emit("joinGameRoom", "1234");
+
+            socket.on("message", (msg) => {
+                console.log(msg);
+            });
+
+            socket.on("update", () => {
+                console.log("Game updated!");
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Hello WololoSI!</h1>
+    </body>
 </html>
