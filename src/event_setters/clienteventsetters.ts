@@ -18,8 +18,8 @@ export function onJoinGameRoom(_io: SocketIO.Server, socket: Socket) {
     });
 }
 
-export function onNotifyGameUpdate(_io: SocketIO.Server, socket: Socket) {
+export function onNotifyGameUpdate(io: SocketIO.Server, socket: Socket) {
     socket.on("notifyGameUpdate", (gameId: string) => {
-        _io.sockets.in(getGameRoom(gameId)).emit("update");
+        io.sockets.in(getGameRoom(gameId)).emit("update");
     });
 }
