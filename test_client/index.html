@@ -15,8 +15,7 @@
             });
 
             function buttonClick() {
-                console.log("Enviando notificacion...");
-                socket.emit("notifyGameUpdate", gameId);
+                socket.emit("notifyGameUpdate");
             }
         </script>
     </head>

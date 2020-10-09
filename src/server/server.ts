@@ -1,5 +1,5 @@
 import express from "express";
-import * as eventSetter from "./event_setters/eventsetters";
+import setupServer from "./setupserver";
 import { router } from "./router";
 
 function init() {
@@ -7,7 +7,7 @@ function init() {
     const server = require("http").createServer(app);
     const io = require("socket.io").listen(server);
 
-    eventSetter.onConnection(io);
+    setupServer(io);
 
     app.use("/", router);
 
