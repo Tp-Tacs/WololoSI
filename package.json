@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "./node_modules/.bin/tsc",
     "clean": "rimraf dist",
     "startdev": "nodemon src/index.ts"
   },
