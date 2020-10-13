@@ -16,5 +16,5 @@ Servidor intermedio entre el backend y frontend de Wololo
 
 Docker
 ```
-$ docker build -t wololo-si . && docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 8001:8001 -e CHOKIDAR_USEPOLLING=true wololo-si
+$ docker build -t wololo-si . && docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 8082:8082 -e CHOKIDAR_USEPOLLING=true wololo-si
 ```
